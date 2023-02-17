@@ -1,0 +1,8 @@
+word=a
+
+if [[ $word == "b" ]]
+then
+	echo " condition is true"
+else
+	echo" xcondition is false"
+fi
