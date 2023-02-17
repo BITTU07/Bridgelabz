@@ -4,6 +4,12 @@ read teamName
 #Array
 rcbTeam=("Siraj" "Maxwell" "Virat" "Duplessis")
 miTeam=("Pollard" "Ishan" "Rohit" "Bumrah")
+#Dictionary
+declare -A cskTeam
+cskTeam[batsman]="conweay"
+cskTeam[bowler]="jadeja"
+cskTeam[allrounder]="moenali"
+cskTeam[captain]="dhoni"
 #Variables Declared Globally
 matchPlayed=14
 win=0
@@ -58,6 +64,25 @@ elif [ $player == "Ishan" ]
 then
 playersByRoleAndResposibility "Batsman" $player $1
 elif [ $player == "Bumrah" ]
+then
+playersByRoleAndResposibility "Bowler" $player $1
+else
+playersByRoleAndResposibility "Captain" $player $1
+fi
+done
+fi
+
+if [ $1 == "csk" ]
+then
+for player in ${cskTeam[*]}
+do
+if [ $player == "moenali" ]
+then
+playersByRoleAndResposibility "All-rounder" $player $1
+elif [ $player == "conweay" ]
+then
+playersByRoleAndResposibility "Batsman" $player $1
+elif [ $player == "jadeja" ]
 then
 playersByRoleAndResposibility "Bowler" $player $1
 else
